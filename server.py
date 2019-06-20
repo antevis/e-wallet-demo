@@ -39,7 +39,7 @@ def transact(sourceWID, srcPwd, targetWID, amount, conn):
     newSourceWalletAmt = sourceWallet[3] - amount
     newTargetWalletAmt = targetWallet[3] + amount
 
-    # Raises in case the final balance exceeds the limit.
+    # Raised in case the final balance exceeds the limit.
     try:
         c.execute('UPDATE wallets SET balance = ? WHERE id = ?',
         (newSourceWalletAmt, sourceId,))
